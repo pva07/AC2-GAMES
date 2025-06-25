@@ -6,32 +6,32 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
-    public int lives = 2;
-
+    public int lives = 0;
+    
     public TMP_Text scoreText;
     public TMP_Text livesText;
-    public ParticleSystem efeito;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void AddPoints(int quantidade)
     {
-        if(collision.CompareTag("Player"))
-        {
-            score++;
-            scoreText.text = "Pontos: " + score.ToString();
-            Instantiate(efeito, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        score += quantidade;
+        UpdateHUD();
     }
 
-    public void RemoveLife(){
-
+    public void RemoveLife()
+    {
+        lives--;
+        UpdateHUD();
     }
 
-    public void Heal(){
-
+    public void Heal()
+    {
+        lives++;
+        UpdateHUD();
     }
 
-    public void UpdateHUD(){
-
+    public void UpdateHUD()
+    {
+        livesText.text = "Vida: " + lives;
+        scoreText.text = "Pontos: " + score;
     }
 }

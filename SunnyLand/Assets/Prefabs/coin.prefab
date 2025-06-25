@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5024433816888410170}
   - component: {fileID: 5815830528511772477}
   - component: {fileID: 4792796813944925941}
-  - component: {fileID: 7520257740693325899}
+  - component: {fileID: 7418381097516369890}
   m_Layer: 0
   m_Name: coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.981, y: 3.555, z: 0}
-  m_LocalScale: {x: 0.1528, y: 0.1528, z: 0.1528}
+  m_LocalScale: {x: 0.14869252, y: 0.14869252, z: 0.14869252}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!114 &7520257740693325899
+--- !u!114 &7418381097516369890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4908968767857106865}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434e2df32486ed149ae9ea51cbb6dc82, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d51c9efa74b5694dada100dc87035ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  lives: 0
+  scoreText: {fileID: 0}
+  livesText: {fileID: 0}
+  efeito: {fileID: 0}

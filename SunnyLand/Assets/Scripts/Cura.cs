@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Coletavel : MonoBehaviour
+public class Cura : MonoBehaviour
 {
     public GameManager gameManager;
     public ParticleSystem efeito;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player"))
         {
-            gameManager.AddPoints(1);
+            gameManager.Heal();
             Instantiate(efeito, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
