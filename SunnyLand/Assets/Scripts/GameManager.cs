@@ -6,32 +6,42 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
-    public int lives = 0;
+    public int lives = 2;
     
     public TMP_Text scoreText;
     public TMP_Text livesText;
 
+    void Start()
+    {
+        scoreText.text = score.ToString();
+        livesText.text = lives.ToString();
+    }
+
     public void AddPoints(int quantidade)
     {
         score += quantidade;
-        UpdateHUD();
+        scoreText.text = score.ToString();
     }
 
     public void RemoveLife()
     {
-        lives--;
-        UpdateHUD();
+        
+        if (lives <= 0)
+        {
+            Debug.Log("GAME OVER!");
+        }
+        --lives;
+
+        Debug.Log(lives);
+        livesText.text = lives.ToString();
     }
 
     public void Heal()
     {
-        lives++;
-        UpdateHUD();
+        if (lives >= 5) return;
+        ++lives;
+        Debug.Log(lives); 
+        livesText.text = lives.ToString();
     }
 
-    public void UpdateHUD()
-    {
-        livesText.text = "Vida: " + lives;
-        scoreText.text = "Pontos: " + score;
-    }
 }

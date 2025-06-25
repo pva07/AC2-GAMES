@@ -5,16 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
-	public Animator animator;
+    public ParticleSystem efeito;
+    public Animator animator;
 
 	public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
 	bool jump = false;
 	bool crouch = false;
+	private bool velocidade = false;
 
-	// Update is called once per frame
-	void Update () {
+    
+
+    // Update is called once per frame
+    void Update () {
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 

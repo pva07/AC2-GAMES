@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class Cura : MonoBehaviour
+public class Gema : MonoBehaviour
 {
-    public GameManager gameManager;
+    public bool velocidade = false;
     public ParticleSystem efeito;
-    private bool vidaColetada = false;
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    public PlayerMovement playerMovement;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.CompareTag("Player"))
         {
-            if (vidaColetada) return;
-            gameManager.Heal();
+            if (velocidade) return;
+            playerMovement.runSpeed = 100f;
             Instantiate(efeito, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            vidaColetada = true;
+            velocidade = true;
         }
     }
-
-
 }
