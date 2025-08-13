@@ -1,3 +1,4 @@
-# 2SunnyLand - Eric Pfeuti
-Feito por: Eric Pfeuti, Vitor Buzato e Kauan Sfrizo Mattos 3EMIA;
+# 2SunnyLand - Pedro Viana 
+
+
 "# AC2-GAMES" 
